@@ -1,0 +1,362 @@
+[
+  {
+    "id": "1",
+    "title": "Junior Software Developer",
+    "company": "Tech Solutions Lanka",
+    "location": "Colombo 03",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "salary": "LKR 50,000 - 80,000",
+    "posted": "2 days ago",
+    "description": "We're looking for an enthusiastic junior developer to join our growing team. Perfect for recent graduates or those who have completed vocational training in IT.",
+    "requirements": [
+      "Basic programming knowledge (Python, JavaScript, or Java)",
+      "Understanding of web development concepts",
+      "Good problem-solving skills",
+      "Willingness to learn new technologies"
+    ],
+    "responsibilities": [
+      "Assist in developing web applications",
+      "Write clean, maintainable code",
+      "Collaborate with senior developers",
+      "Participate in code reviews"
+    ],
+    "pathway": "information-technology",
+    "qualifications": ["certificate", "diploma"],
+    "skills": ["Python", "JavaScript", "HTML", "CSS", "Git"],
+    "logo": "🖥️",
+    "featured": true,
+    "remote": false,
+    "benefits": ["Training provided", "Career growth", "Health insurance"]
+  },
+  {
+    "id": "2",
+    "title": "Electrical Technician",
+    "company": "Power Engineering Ltd",
+    "location": "Kandy",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "salary": "LKR 45,000 - 75,000",
+    "posted": "3 days ago",
+    "description": "Join our team as an electrical technician. We welcome candidates with vocational training and are committed to providing on-the-job training.",
+    "requirements": [
+      "Certificate or Diploma in Electrical Engineering",
+      "Basic understanding of electrical systems",
+      "Safety awareness",
+      "Physical fitness for fieldwork"
+    ],
+    "responsibilities": [
+      "Install and maintain electrical systems",
+      "Troubleshoot electrical problems",
+      "Follow safety protocols",
+      "Work with engineering team"
+    ],
+    "pathway": "engineering-and-technology",
+    "qualifications": ["certificate", "diploma"],
+    "skills": ["Electrical Systems", "Circuit Analysis", "Safety Protocols", "Problem Solving"],
+    "logo": "⚡",
+    "featured": true,
+    "remote": false,
+    "benefits": ["Safety equipment provided", "Training programs", "Overtime pay"]
+  },
+  {
+    "id": "3",
+    "title": "Nursing Assistant",
+    "company": "Lanka Hospital",
+    "location": "Colombo 05",
+    "type": "Full-time",
+    "experience": "0-1 years",
+    "salary": "LKR 40,000 - 60,000",
+    "posted": "1 day ago",
+    "description": "Compassionate nursing assistants needed to support our healthcare team. Fresh graduates from nursing programs are encouraged to apply.",
+    "requirements": [
+      "Certificate in Nursing or Healthcare",
+      "Good communication skills",
+      "Empathy and patience",
+      "Physical stamina"
+    ],
+    "responsibilities": [
+      "Assist nurses with patient care",
+      "Monitor patient vital signs",
+      "Maintain clean and safe environment",
+      "Document patient information"
+    ],
+    "pathway": "healthcare-and-medical-science",
+    "qualifications": ["certificate", "diploma"],
+    "skills": ["Patient Care", "First Aid", "Communication", "Empathy"],
+    "logo": "🏥",
+    "featured": true,
+    "remote": false,
+    "benefits": ["Health insurance", "Shift allowance", "Professional development"]
+  },
+  {
+    "id": "4",
+    "title": "Web Designer",
+    "company": "Creative Digital Agency",
+    "location": "Colombo 07",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "salary": "LKR 45,000 - 70,000",
+    "posted": "5 days ago",
+    "description": "Looking for a creative web designer with basic skills. We provide training and mentorship for the right candidate.",
+    "requirements": [
+      "Basic knowledge of design tools (Figma, Adobe XD)",
+      "Understanding of web design principles",
+      "Creative portfolio (even personal projects)",
+      "Eagerness to learn"
+    ],
+    "responsibilities": [
+      "Design website layouts and interfaces",
+      "Create visual content for web",
+      "Collaborate with developers",
+      "Maintain design consistency"
+    ],
+    "pathway": "information-technology",
+    "qualifications": ["certificate", "diploma"],
+    "skills": ["UI/UX Design", "Figma", "Adobe XD", "HTML", "CSS"],
+    "logo": "🎨",
+    "featured": false,
+    "remote": true,
+    "benefits": ["Flexible hours", "Remote work", "Creative environment"]
+  },
+  {
+    "id": "5",
+    "title": "Hotel Receptionist",
+    "company": "Cinnamon Grand Hotel",
+    "location": "Colombo 03",
+    "type": "Full-time",
+    "experience": "0-1 years",
+    "salary": "LKR 35,000 - 55,000",
+    "posted": "4 days ago",
+    "description": "Join our hospitality team as a receptionist. We value customer service skills and provide comprehensive training.",
+    "requirements": [
+      "Certificate or Diploma in Hotel Management",
+      "Good communication in English and Sinhala",
+      "Friendly and professional demeanor",
+      "Computer literacy"
+    ],
+    "responsibilities": [
+      "Welcome and check-in guests",
+      "Handle reservations and inquiries",
+      "Manage front desk operations",
+      "Coordinate with other departments"
+    ],
+    "pathway": "hospitality-and-tourism",
+    "qualifications": ["certificate", "diploma"],
+    "skills": ["Customer Service", "Communication", "MS Office", "Problem Solving"],
+    "logo": "🏨",
+    "featured": false,
+    "remote": false,
+    "benefits": ["Service charge", "Meals provided", "Career advancement"]
+  },
+  {
+    "id": "6",
+    "title": "Kindergarten Teacher Assistant",
+    "company": "Little Scholars Preschool",
+    "location": "Nugegoda",
+    "type": "Part-time",
+    "experience": "0-1 years",
+    "salary": "LKR 30,000 - 45,000",
+    "posted": "6 days ago",
+    "description": "Passionate about working with children? Join our team as a teacher assistant. Perfect for those with childcare qualifications.",
+    "requirements": [
+      "Certificate in Early Childhood Education",
+      "Love for working with children",
+      "Patience and creativity",
+      "Basic English proficiency"
+    ],
+    "responsibilities": [
+      "Assist lead teacher with activities",
+      "Supervise children during play",
+      "Help with classroom management",
+      "Communicate with parents"
+    ],
+    "pathway": "education-and-childcare",
+    "qualifications": ["certificate"],
+    "skills": ["Child Development", "Classroom Management", "Communication", "Creativity"],
+    "logo": "👶",
+    "featured": false,
+    "remote": false,
+    "benefits": ["School holidays off", "Training provided", "Friendly environment"]
+  },
+  {
+    "id": "7",
+    "title": "Construction Site Assistant",
+    "company": "Metropolitan Builders",
+    "location": "Gampaha",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "salary": "LKR 40,000 - 65,000",
+    "posted": "1 week ago",
+    "description": "Entry-level position for construction site assistant. We provide on-site training and safety equipment.",
+    "requirements": [
+      "Certificate in Construction or related field",
+      "Physical fitness",
+      "Basic understanding of construction safety",
+      "Team player attitude"
+    ],
+    "responsibilities": [
+      "Assist with site preparation",
+      "Help organize materials and tools",
+      "Follow safety protocols",
+      "Support construction team"
+    ],
+    "pathway": "construction-and-quantity-survey",
+    "qualifications": ["certificate"],
+    "skills": ["Construction Safety", "Physical Work", "Teamwork", "Tool Knowledge"],
+    "logo": "🏗️",
+    "featured": false,
+    "remote": false,
+    "benefits": ["Safety gear provided", "Overtime opportunities", "Skill development"]
+  },
+  {
+    "id": "8",
+    "title": "Accounting Assistant",
+    "company": "Finance Solutions Lanka",
+    "location": "Colombo 04",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "salary": "LKR 40,000 - 65,000",
+    "posted": "3 days ago",
+    "description": "Looking for an organized individual to join our accounting team. Entry-level position with training provided.",
+    "requirements": [
+      "Certificate or Diploma in Business/Accounting",
+      "Basic knowledge of accounting principles",
+      "Good with numbers and attention to detail",
+      "Proficiency in MS Excel"
+    ],
+    "responsibilities": [
+      "Assist with bookkeeping tasks",
+      "Prepare basic financial documents",
+      "Data entry and filing",
+      "Support senior accountants"
+    ],
+    "pathway": "business-and-management",
+    "qualifications": ["certificate", "diploma"],
+    "skills": ["Accounting", "MS Excel", "Data Entry", "Attention to Detail"],
+    "logo": "💼",
+    "featured": false,
+    "remote": false,
+    "benefits": ["Professional training", "Career growth", "Annual bonus"]
+  },
+  {
+    "id": "9",
+    "title": "Agricultural Field Assistant",
+    "company": "Green Harvest Farms",
+    "location": "Anuradhapura",
+    "type": "Full-time",
+    "experience": "0-1 years",
+    "salary": "LKR 35,000 - 50,000",
+    "posted": "5 days ago",
+    "description": "Join our agricultural team and work with modern farming techniques. Training provided in sustainable agriculture.",
+    "requirements": [
+      "Certificate in Agriculture or related field",
+      "Interest in farming and sustainability",
+      "Physical fitness for outdoor work",
+      "Willingness to learn new techniques"
+    ],
+    "responsibilities": [
+      "Assist with crop cultivation",
+      "Monitor crop health",
+      "Help with harvesting",
+      "Maintain farm equipment"
+    ],
+    "pathway": "agriculture-and-aquatic-resources",
+    "qualifications": ["certificate"],
+    "skills": ["Agriculture", "Crop Management", "Physical Work", "Observation"],
+    "logo": "🌾",
+    "featured": false,
+    "remote": false,
+    "benefits": ["Housing provided", "Fresh produce", "Training in modern farming"]
+  },
+  {
+    "id": "10",
+    "title": "Data Entry Operator",
+    "company": "Business Process Outsourcing",
+    "location": "Maharagama",
+    "type": "Full-time",
+    "experience": "0-1 years",
+    "salary": "LKR 35,000 - 50,000",
+    "posted": "2 days ago",
+    "description": "Entry-level data entry position. Perfect for those with basic computer skills and attention to detail.",
+    "requirements": [
+      "Basic computer literacy",
+      "Good typing speed (30+ WPM)",
+      "Attention to detail",
+      "Certificate in IT or Business (preferred)"
+    ],
+    "responsibilities": [
+      "Enter data accurately into systems",
+      "Verify data quality",
+      "Maintain records",
+      "Follow data security protocols"
+    ],
+    "pathway": "information-technology",
+    "qualifications": ["certificate", "diploma"],
+    "skills": ["Typing", "MS Office", "Data Entry", "Attention to Detail"],
+    "logo": "⌨️",
+    "featured": false,
+    "remote": true,
+    "benefits": ["Work from home option", "Flexible hours", "Performance bonuses"]
+  },
+  {
+    "id": "11",
+    "title": "Mechanical Technician",
+    "company": "Auto Service Center",
+    "location": "Negombo",
+    "type": "Full-time",
+    "experience": "1-3 years",
+    "salary": "LKR 45,000 - 70,000",
+    "posted": "4 days ago",
+    "description": "Skilled mechanical technician needed for auto repair shop. We provide tools and ongoing training.",
+    "requirements": [
+      "Certificate or Diploma in Mechanical Engineering",
+      "Hands-on experience with vehicles",
+      "Problem-solving skills",
+      "Physical stamina"
+    ],
+    "responsibilities": [
+      "Diagnose vehicle problems",
+      "Perform repairs and maintenance",
+      "Use diagnostic equipment",
+      "Maintain workshop cleanliness"
+    ],
+    "pathway": "engineering-and-technology",
+    "qualifications": ["certificate", "diploma"],
+    "skills": ["Automotive Repair", "Diagnostics", "Problem Solving", "Tool Usage"],
+    "logo": "🔧",
+    "featured": true,
+    "remote": false,
+    "benefits": ["Tools provided", "Technical training", "Commission on services"]
+  },
+  {
+    "id": "12",
+    "title": "Tour Guide",
+    "company": "Ceylon Travels",
+    "location": "Kandy",
+    "type": "Full-time",
+    "experience": "0-2 years",
+    "salary": "LKR 40,000 - 70,000",
+    "posted": "1 week ago",
+    "description": "Enthusiastic tour guide needed to showcase Sri Lanka's beauty. Language skills and passion for tourism required.",
+    "requirements": [
+      "Certificate in Tourism or Hospitality",
+      "Excellent communication in English",
+      "Knowledge of Sri Lankan history and culture",
+      "Friendly and outgoing personality"
+    ],
+    "responsibilities": [
+      "Lead tour groups",
+      "Provide information about attractions",
+      "Ensure tourist safety and satisfaction",
+      "Handle tour logistics"
+    ],
+    "pathway": "hospitality-and-tourism",
+    "qualifications": ["certificate", "diploma"],
+    "skills": ["Public Speaking", "Languages", "Customer Service", "Cultural Knowledge"],
+    "logo": "🗺️",
+    "featured": false,
+    "remote": false,
+    "benefits": ["Travel opportunities", "Tips", "Flexible schedule"]
+  }
+]
