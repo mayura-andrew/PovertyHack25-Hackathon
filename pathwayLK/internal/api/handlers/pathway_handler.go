@@ -422,6 +422,56 @@ func (h *PathwayHandler) GetLearningRoadmap(c *gin.Context) {
 	})
 }
 
+// GetCachedLearningRoadmap handles GET /api/v1/pathway/programs/:name/learning-roadmap/cached
+// Returns ONLY cached roadmap data, does NOT call LLM - used as fallback when LLM is slow/unavailable
+func (h *PathwayHandler) GetCachedLearningRoadmap(c *gin.Context) {
+	ctx := c.Request.Context()
+	requestID := c.GetString("request_id")
+	programName := c.Param("name")
+
+	h.logger.Info("Fetching cached learning roadmap only",
+		zap.String("request_id", requestID),
+		zap.String("program", programName))
+
+	if programName == "" {
+		h.logger.Warn("Program name is required",
+			zap.String("request_id", requestID))
+		c.JSON(http.StatusBadRequest, gin.H{
+			"success":    false,
+			"error":      "Program name is required",
+			"request_id": requestID,
+			"timestamp":  time.Now().UTC(),
+		})
+		return
+	}
+
+	roadmap, err := h.service.GetCachedLearningRoadmap(ctx, programName)
+	if err != nil {
+		h.logger.Warn("No cached roadmap found",
+			zap.String("request_id", requestID),
+			zap.String("program", programName),
+			zap.Error(err))
+		c.JSON(http.StatusNotFound, gin.H{
+			"success":    false,
+			"error":      "No cached roadmap found for this program",
+			"message":    "Try generating a new roadmap first using the /learning-roadmap endpoint",
+			"request_id": requestID,
+			"timestamp":  time.Now().UTC(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"success":    true,
+		"data":       roadmap,
+		"program":    programName,
+		"source":     "cache",
+		"note":       "This is cached data. For fresh generation, use /learning-roadmap endpoint",
+		"request_id": requestID,
+		"timestamp":  time.Now().UTC(),
+	})
+}
+
 // GetLearningRoadmapFast handles GET /api/v1/pathway/programs/:name/learning-roadmap-fast
 // Returns roadmap WITHOUT videos for ultra-fast response (2-3 seconds vs 15-30 seconds)
 func (h *PathwayHandler) GetLearningRoadmapFast(c *gin.Context) {

@@ -53,24 +53,71 @@ export default function LearningRoadmap({ programName, onBack }: Props) {
       setLoading(true);
       setError(null);
       
+      console.log(`🔍 Fetching roadmap for: ${programName}`)
+      
+      // STRATEGY 1: Try cached data first for instant response
+      try {
+        console.log('📦 Attempting to load from cache...')
+        const cachedResponse = await fetch(
+          `http://localhost:8080/api/v1/pathway/programs/${encodeURIComponent(programName)}/learning-roadmap/cached`
+        );
+
+        if (cachedResponse.ok) {
+          const cachedData = await cachedResponse.json();
+          if (cachedData.success && cachedData.data) {
+            console.log('✅ Loaded from cache successfully!')
+            setRoadmap(cachedData.data);
+            setLoading(false);
+            return; // Success! Use cached data
+          }
+        } else if (cachedResponse.status === 404) {
+          console.log('⚠️ No cached data found, will try fresh generation')
+        }
+      } catch (cacheError) {
+        console.warn('⚠️ Cache fetch failed, will try fresh generation:', cacheError)
+      }
+
+      // STRATEGY 2: If no cache, try fast generation (without videos)
+      console.log('🚀 Attempting fast roadmap generation (no videos)...')
+      try {
+        const fastResponse = await fetch(
+          `http://localhost:8080/api/v1/pathway/programs/${encodeURIComponent(programName)}/learning-roadmap-fast`
+        );
+
+        if (fastResponse.ok) {
+          const fastData = await fastResponse.json();
+          if (fastData.success && fastData.data) {
+            console.log('✅ Fast roadmap generated successfully!')
+            setRoadmap(fastData.data);
+            setLoading(false);
+            return;
+          }
+        }
+      } catch (fastError) {
+        console.warn('⚠️ Fast generation failed, will try full generation:', fastError)
+      }
+
+      // STRATEGY 3: Last resort - full generation with videos (slowest)
+      console.log('⏳ Attempting full roadmap generation with videos (this may take 15-30s)...')
       const response = await fetch(
         `http://localhost:8080/api/v1/pathway/programs/${encodeURIComponent(programName)}/learning-roadmap`
       );
 
       if (!response.ok) {
-        throw new Error('Failed to fetch learning roadmap');
+        throw new Error('Failed to fetch learning roadmap from all endpoints');
       }
 
       const data = await response.json();
       
       if (data.success && data.data) {
+        console.log('✅ Full roadmap generated successfully!')
         setRoadmap(data.data);
       } else {
         throw new Error('Invalid response format');
       }
     } catch (err) {
-      console.error('Error fetching roadmap:', err);
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      console.error('❌ Error fetching roadmap:', err);
+      setError(err instanceof Error ? err.message : 'Unable to load roadmap. The LLM service may be unavailable. Please try again later.');
     } finally {
       setLoading(false);
     }

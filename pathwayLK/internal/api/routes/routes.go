@@ -64,6 +64,9 @@ func SetupRoutes(
 			// Get learning roadmap for a program (with videos - slower 15-30s)
 			pathway.GET("/programs/:name/learning-roadmap", pathwayHandler.GetLearningRoadmap)
 
+			// Get CACHED learning roadmap ONLY (no LLM call - instant if cached)
+			pathway.GET("/programs/:name/learning-roadmap/cached", pathwayHandler.GetCachedLearningRoadmap)
+
 			// Get learning roadmap FAST (without videos - ultra fast 2-3s)
 			pathway.GET("/programs/:name/learning-roadmap-fast", pathwayHandler.GetLearningRoadmapFast)
 

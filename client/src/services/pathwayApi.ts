@@ -149,5 +149,108 @@ export const pathwayApi = {
       }
       throw error
     }
+  },
+
+  // Learning Roadmap Endpoints
+  
+  // Get cached learning roadmap (no LLM call - instant if exists)
+  async getCachedLearningRoadmap(programName: string): Promise<any> {
+    const encodedName = encodeURIComponent(programName)
+    const url = `${API_BASE_URL}/pathway/programs/${encodedName}/learning-roadmap/cached`
+    
+    try {
+      console.log(`📡 Fetching cached roadmap: ${url}`)
+      const response = await fetch(url)
+      
+      if (response.status === 404) {
+        console.warn('⚠️ No cached roadmap found')
+        return null
+      }
+      
+      if (!response.ok) {
+        const errorText = await response.text()
+        console.error(`❌ HTTP ${response.status}: ${errorText}`)
+        throw new Error(`Server returned ${response.status}: ${response.statusText}`)
+      }
+      
+      const json: ApiResponse<any> = await response.json()
+      console.log(`✅ Cached roadmap response:`, json)
+      
+      if (!json.success) {
+        throw new Error(json.error || 'API returned unsuccessful response')
+      }
+      
+      return json.data
+    } catch (error) {
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        console.error('❌ Network error - is backend running?')
+        throw new Error(`Cannot connect to backend at ${API_BASE_URL}. Is it running?`)
+      }
+      throw error
+    }
+  },
+
+  // Get learning roadmap with videos (full generation - slower)
+  async getLearningRoadmap(programName: string): Promise<any> {
+    const encodedName = encodeURIComponent(programName)
+    const url = `${API_BASE_URL}/pathway/programs/${encodedName}/learning-roadmap`
+    
+    try {
+      console.log(`📡 Fetching learning roadmap with videos: ${url}`)
+      const response = await fetch(url)
+      
+      if (!response.ok) {
+        const errorText = await response.text()
+        console.error(`❌ HTTP ${response.status}: ${errorText}`)
+        throw new Error(`Server returned ${response.status}: ${response.statusText}`)
+      }
+      
+      const json: ApiResponse<any> = await response.json()
+      console.log(`✅ Learning roadmap response:`, json)
+      
+      if (!json.success) {
+        throw new Error(json.error || 'API returned unsuccessful response')
+      }
+      
+      return json.data
+    } catch (error) {
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        console.error('❌ Network error - is backend running?')
+        throw new Error(`Cannot connect to backend at ${API_BASE_URL}. Is it running?`)
+      }
+      throw error
+    }
+  },
+
+  // Get learning roadmap fast (no videos - faster)
+  async getLearningRoadmapFast(programName: string): Promise<any> {
+    const encodedName = encodeURIComponent(programName)
+    const url = `${API_BASE_URL}/pathway/programs/${encodedName}/learning-roadmap-fast`
+    
+    try {
+      console.log(`📡 Fetching fast learning roadmap: ${url}`)
+      const response = await fetch(url)
+      
+      if (!response.ok) {
+        const errorText = await response.text()
+        console.error(`❌ HTTP ${response.status}: ${errorText}`)
+        throw new Error(`Server returned ${response.status}: ${response.statusText}`)
+      }
+      
+      const json: ApiResponse<any> = await response.json()
+      console.log(`✅ Fast learning roadmap response:`, json)
+      
+      if (!json.success) {
+        throw new Error(json.error || 'API returned unsuccessful response')
+      }
+      
+      return json.data
+    } catch (error) {
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        console.error('❌ Network error - is backend running?')
+        throw new Error(`Cannot connect to backend at ${API_BASE_URL}. Is it running?`)
+      }
+      throw error
+    }
   }
 }

@@ -120,7 +120,7 @@ export default function JobRoleSidePanel({ roleName, programContext, onClose }: 
     <>
       {/* Modal Backdrop - Google-style subtle overlay */}
       <div 
-        className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-[1px] transition-opacity z-40 flex items-center justify-center p-6"
+        className="fixed inset-0 bg-blue bg-opacity-25 backdrop-blur-[1px] transition-opacity z-40 flex items-center justify-center p-6"
         onClick={onClose}
       >
         {/* Modal Container - Google Material Design 3 */}

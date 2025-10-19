@@ -145,6 +145,46 @@ func (s *Service) GetPathwayToCareer(ctx context.Context, careerTitle string) ([
 	return paths, nil
 }
 
+// GetCachedLearningRoadmap retrieves a cached learning roadmap WITHOUT calling LLM
+// Returns error if no cached data exists - use this as fallback when LLM is slow/unavailable
+func (s *Service) GetCachedLearningRoadmap(ctx context.Context, programName string) (*LearningRoadmapResponse, error) {
+	s.logger.Debug("Retrieving cached learning roadmap only", zap.String("program", programName))
+
+	if programName == "" {
+		return nil, fmt.Errorf("program name is required")
+	}
+
+	// Check cache only - don't generate if not found
+	cachedData, found, err := s.cache.Get(ctx, programName)
+	if err != nil {
+		s.logger.Error("Cache error while retrieving roadmap",
+			zap.String("program", programName),
+			zap.Error(err))
+		return nil, fmt.Errorf("cache error: %w", err)
+	}
+
+	if !found || cachedData == nil {
+		s.logger.Info("No cached roadmap found",
+			zap.String("program", programName))
+		return nil, fmt.Errorf("no cached roadmap found for program: %s", programName)
+	}
+
+	// Unmarshal cached data
+	response, err := s.unmarshalCachedRoadmap(cachedData)
+	if err != nil {
+		s.logger.Error("Failed to unmarshal cached roadmap",
+			zap.String("program", programName),
+			zap.Error(err))
+		return nil, fmt.Errorf("invalid cached data: %w", err)
+	}
+
+	s.logger.Info("Successfully retrieved cached learning roadmap",
+		zap.String("program", programName),
+		zap.String("source", "cache"))
+
+	return response, nil
+}
+
 // GetLearningRoadmapFast generates a learning roadmap WITHOUT videos for ultra-fast response
 // Use this when you need immediate results and can fetch videos separately on the frontend
 func (s *Service) GetLearningRoadmapFast(ctx context.Context, programName string) (*LearningRoadmapResponse, error) {
