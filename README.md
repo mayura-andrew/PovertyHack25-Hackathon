@@ -1,5 +1,9 @@
 # PovertyHack 2025 — 24-hour Hackathon
 
+#### Date - 17th to 18th of October, 2025
+#### Location - Faculty of Health Sciences, The Open University of Sri Lanka
+#### Organized by Sri Lanka Association for the Advancement of Science (https://www.slaas.lk/)
+
 This repository contains our hackathon solution for PovertyHack 2025. The project combines a React + Vite frontend (client/) with a Go backend (pathwayLK/) that provides learning roadmaps, YouTube scraping, LLM integration and cached learning resources stored in MongoDB / Neo4j.
 
 ## Structure
